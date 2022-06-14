@@ -432,7 +432,7 @@
 // 3. сравнить сумму покупи и баланс
 // 4. вычесть из баланса сумму покупки
 // 5. результат - сообщение `На счету осталось [число] кредитов`
-// if (payment < balance) {
+// if (payment <= balance) {
 //   balance -= payment;
 //   messageResult = `На счету осталось ${balance} кредитов`;
 //   console.log(messageResult);
@@ -443,3 +443,4 @@
 // messageResult = 'Операция завершена.';
 // console.log(messageResult);
 // balance -= payment; - как ваирант записи отнимания
+// Репета писал текст сообщений в консоле без const
