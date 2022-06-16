@@ -1,6 +1,17 @@
 // const totalPrice = 200;
 // console.log('Цена:', totalPrice);
 
+//-----------------------разница между свойством и методом-------------------------
+// Свойство => сущность.имя_свойства
+// const exampleProperty = "I'm from Ukraine".length;
+// console.log(exampleProperty);
+// 16 - количество символов
+
+// Метод => сущность.имя_метода()
+// const exampleProperty = "I'm from Ukraine";
+// console.log(exampleProperty.toUpperCase(exampleProperty));
+// 16 - количество символов
+
 //-------------------------------------typeof-------------------------------------
 // оператор typeof
 // const type = typeof '4';
@@ -170,6 +181,24 @@
 // пример с шаблонной строкой
 // const welcomeMsg = `Гость ${firstName} ${lastName} поселяестся в ${type} номер ${room}`;
 // console.log(welcomeMsg);
+
+//---------------------------String (indexOf) -----------------------------
+// const sentence = 'My name is Nataliya Fedorova';
+// console.log(sentence.indexOf('name'));
+// 3
+// console.log(sentence.indexOf('Nataliya'));
+
+// console.log(sentence.indexOf('fedorova'));
+//слово есть,но в консоле первая буква в нижнем регистре, поэтому -1 (нет совпадений)
+// console.log(sentence.indexOf('to'));
+// -1 (нет совпадений)
+
+//---------------------------String (replace) ----------------------------
+// const substring = 'My name is NNNNNNNN Fedorova'.replace('NNNNNNNN', 'Nataliya');
+// console.log(substring);
+
+// const substring1 = 'We make changes only in подстроку'.replace('подстроку', 'substring');
+// console.log(substring1);
 
 //-----------------------нормализация с методом toLowerCase (2 варианта)--------------------
 // let brandName = 'SamsuNG';

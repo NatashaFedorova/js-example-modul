@@ -90,36 +90,36 @@
 // Тема. Операторы сравнения и приведение типов
 // Каким будет результат выражений?
 
-// console.log(5 > 4);
-// console.log(10 >= '7');
-// console.log('2' > '12');
-// console.log('2' < '12');
-// console.log('4' == 4);
-// console.log('6' === 6);
-// console.log('false' === false);
-// console.log(1 == true);
-// console.log(1 === true);
-// console.log('0' == false);
-// console.log('0' === false);
-// console.log('Papaya' < 'papaya');
-// console.log('Papaya' === 'papaya');
-// console.log(undefined == null);
-// console.log(undefined === null);
+// console.log(5 > 4); // true
+// console.log(10 >= '7'); // true
+//console.log('2' > '12'); // false
+// console.log('2' < '12'); // false
+// console.log('4' == 4); // true
+// console.log('6' === 6); // false
+// console.log('false' === false); // false
+// console.log(1 == true); //true
+// console.log(1 === true); //false
+// console.log('0' == false); //true
+// console.log('0' === false); //false
+// console.log('Papaya' < 'papaya'); //true
+// console.log('Papaya' === 'papaya'); //false
+// console.log(undefined == null); // true
+// console.log(undefined === null); //false
 
 //-------------------------------Example 8---------------------------------------------
 // Тема. Логические операторы
 // Каким будет результат выражений?
 
-// console.log(true && 3);
-// console.log(false && 3);
-// console.log(true && 4 && 'kiwi');
-// console.log(true && 0 && 'kiwi');
-// console.log(true || 3);
-// console.log(true || 3 || 4);
-// console.log(true || false || 7);
-// console.log(null || 2 || undefined);
-// console.log((1 && null && 2) > 0);
-// console.log(null || (2 && 3) || 4);
+//console.log(true && 3); // 3
+//console.log(false && 3); //false
+// console.log(true && 4 && 'kiwi'); // 'kiwi'
+// console.log(true && 0 && 'kiwi'); //0
+// console.log(true || 3); //true
+// console.log(true || 3 || 4); //true
+// console.log(true || false || 7); // true
+// console.log(null || 2 || undefined); //2
+// console.log((1 && null && 2) > 0); //false
+// console.log(null || (2 && 3) || 4); // 3
 
 //-------------------------------Example 9---------------------------------------------
 // Тема. Значение по умолчанию и оператор нулевого слияния
@@ -127,10 +127,24 @@
 // В противном случае должно присваиваться значение defaultValue.
 // Проверь работу скрипта для слепдующих значений переменной incomingValue: null, undefined, 0, false.Используй оператор ?? (nullish coalescing operator).
 
-// const incomingValue = 5;
+// const incomingValue = 0; // 10
+// const incomingValue = false; // 10
+// const incomingValue = null; // 10
+// const incomingValue = undefined; //10
 // const defaultValue = 10;
 // const value = incomingValue || defaultValue;
 // console.log(value);
+
+//const incomingValue = 0; // 0
+// const incomingValue = false; // false
+// const incomingValue = null; // 10
+// const incomingValue = undefined; // 10
+// const defaultValue = 10;
+// const value = incomingValue ?? defaultValue;
+// console.log(value);
+
+// ?? - nullish coalescing operator - возвращает значение  defaultValue,
+// только в том случае, если incomingValue НЕ 0 или false (0 - как число, false как значение)
 
 //-------------------------------Example 10---------------------------------------------
 // Тема. Опертор % и методы строк
@@ -140,7 +154,7 @@
 //  - 450 покажет 07:30
 //  - 1441 покажет 24:01
 
-// const totalMinutes = 70;
+// const totalMinutes = 1441;
 
 // const hours = Math.floor(totalMinutes / 60);
 // const minutes = totalMinutes % 60;
@@ -150,3 +164,8 @@
 // const doubleDigitHours = String(hours).padStart(2, 0);
 // const doubleDigitMinutes = String(minutes).padStart(2, 0);
 // console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
+
+// --------------------------------------(&& ||)----------------------------
+// console.log(1 && 'Mango');
+// const age = 5;
+// console.log(age < 10 || age > 30); // true || false -> true
