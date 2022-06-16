@@ -7,21 +7,38 @@
 // Если пользователь вводит ECMAScript, то показывай alert со строкой "Верно!",
 // в противном случае - "Не знаете? ECMAScript!"
 
+// const userAnswer = prompt('Какое официальное название JavaScript?');
+
+// вариант 1
+// if (userAnswer.toLowerCase() === 'ECMAScript'.toLowerCase()) {
+//   console.log('Верно!');
+// } else {
+//   console.log('Не знаете? ECMAScript!');
+// }
+
+// вариант 2
+// console.log(
+//   userAnswer.toLowerCase() === 'ECMAScript'.toLowerCase() ? 'Верно!' : 'Не знаете? ECMAScript!'
+// );
+
 //-------------------------------Example 2---------------------------------------------
 // Тема. Отображение времени (if...else)
 //Напиши скрипт для отображения часов и минут в консоли браузера в виде строки формата "14 ч. 26 мин.".
 //Если значение переменной minutes равно 0, то выводи строку "14 ч.", без минут.
 
 // const hours = 14;
-// const minutes = 26;
+// const minutes = 15;
 // let timestring;
 
+// вариант 1
 // if (minutes > 0) {
 //   timestring = `${hours} ч. ${minutes} мин.`;
 // } else {
 //   timestring = `${hours} ч.`;
 // }
-// console.log(timestring);
+
+// вариант 2
+// console.log(minutes > 0 ? `${hours} ч. ${minutes} мин.` : `${hours} ч.`);
 
 //-------------------------------Example 3---------------------------------------------
 // Тема. Ветвеления
@@ -30,7 +47,31 @@
 //Если был введен ноль, выводи в консоль строку "Это ноль".
 //Если передали отрицательное число, в консоли должна быть строка "Это отрицательное число".
 
+// мое решение
 // const userInput = prompt('Введите число');
+// const num = Number(userInput);
+
+// if (num < 0) {
+//   console.log('Это отрицательное число');
+// } else if (num === 0) {
+//   console.log('Это ноль');
+// } else {
+//   console.log('Это положительное число');
+// }
+
+//мое решение
+// const userInput = prompt('Введите число');
+// const number = Number(userInput) || 0;
+// let answer;
+
+// if (number > 0) {
+//   answer = 'Это положительное число';
+// } else if (number < 0) {
+//   answer = 'Это отрицательное число';
+// } else {
+//   answer = 'Это ноль';
+// }
+// console.log(answer);
 
 //-------------------------------Example 4---------------------------------------------
 // Тема.Вложенные ветвления
