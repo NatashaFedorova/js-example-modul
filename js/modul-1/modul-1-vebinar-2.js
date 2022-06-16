@@ -79,8 +79,30 @@
 // Если оба значения больше 100, то выведи в консоль максимальное из них.
 // В противном случае в консоли должна быть сумма значения b и числа 512.
 
-// const a = 120;
+// const a = 20;
 // const b = 180;
+// мой вариант
+// if (a > 100 && b > 100) {
+//   console.log(a > b ? a : b);
+// } else {
+//   console.log(b + 512);
+// }
+
+// вариант лектора
+// if (a > 100 && b > 100) {
+//   // const res = Math.max(a, b);
+//   const res = a > b ? a : b;
+
+//   // if (a > b) {
+//   //   res = a;
+//   // } else {
+//   //   res = b;
+//   // }
+
+//   console.log(res);
+// } else {
+//   console.log(b + 512);
+// }
 
 //-------------------------------Example 5---------------------------------------------
 // Тема. Форматирование ссылки (endsWith)
@@ -89,6 +111,17 @@
 
 // let link = 'https://my-site.com/about';
 // Пиши код ниже этой строки
+
+// мое решение
+// if (link.endsWith('/') === false) {
+//   console.log(link + '/');
+// } else {
+//   console.log(link);
+// }
+
+// решение лектора
+// if (!link.endsWith("/")) link += "/";
+// // link += !link.endsWith("/") ? "/" : "";
 
 // Пиши код выше этой строки
 // console.log(link);
@@ -99,8 +132,18 @@
 // Если нет, добавь в конец значения link этот символ, но только в том случае, если в link есть подстрока "my-site".
 // Используй конструкцию if...else.
 
-// let link = 'https://somesite.com/about';
+// let link = 'https://somesite.com/about/my-site';
+
 // Пиши код ниже этой строки
+// мое решение  1
+// if (!link.endsWith('/') && link.includes('my-site')) {
+//   console.log(link + '/');
+// } else {
+//   console.log(link);
+//  }
+
+// мое решение  2
+// if (!link.endsWith('/') && link.includes('my-site')) link + '/';
 
 // Пиши код выше этой строки
 // console.log(link);
@@ -109,10 +152,14 @@
 // Тема. Форматирование ссылки (тернарный оператор)
 // Выполни рефакторинг кода задачи номер 4 используя тернарный оператор.
 
-// let link = 'https://somesite.com/about';
-// if (link.includes('my-site') && !link.endsWith('/')) {
+// let link = 'https://somesite.com/about/my-site';
+// if (link.includes('my-site') && !link.endsWith('/'))
 //   link += '/';
-// }
+// мой вариант
+// link = link.includes('my-site') && !link.endsWith('/') ? (link += '/') : (link += '');
+
+//решение лектора
+// link += link.includes("my-site") && !link.endsWith("/") ? "/" : "";
 // console.log(link);
 
 //-------------------------------Example 8---------------------------------------------
@@ -124,7 +171,17 @@
 // больше либо равно 17 и меньше либо равно 24, выводи строку "Expires"
 // больше 24 , выводи строку "Overdue"
 
-// const hours = 10;
+// const hours = 5;
+// let text;
+// if (hours < 17) {
+//   text = 'Pending';
+// } else if (hours >= 17 && hours <= 24) {
+//   text = 'Expires';
+//   console.log('Expires');
+// } else {
+//   text = 'Overdue';
+// }
+// console.log(text);
 
 //-------------------------------Example 9---------------------------------------------
 // Тема. Дедлайн сдачи проекта (if...else)
@@ -136,9 +193,35 @@
 // Eсли до дедлайна 2 дня - выведи строку "Послезавтра"
 // Eсли до дедлайна 3+ дней - выведи строку "Дата в будущем"
 
-// const daysUntilDeadline = 5;
-// Пиши код ниже этой строки
+// const daysUntilDeadline = 2;
+// let text;
+// мое решение
+// if (daysUntilDeadline === 0) {
+//   text = 'Сегодня';
+// } else if (daysUntilDeadline === 1) {
+//   text = 'Завтра';
+// } else if (daysUntilDeadline === 2) {
+//   text = 'Послезавтра';
+// } else {
+//   text = 'Дата в будущем';
+// }
 
+// решение лектора
+// switch (daysUntilDeadline) {
+//   case 0:
+//     text = 'Сегодня';
+//     break;
+//   case 1:
+//     text = 'Завтра';
+//     break;
+//   case 2:
+//     text = 'Послезавтра';
+//     break;
+//   default:
+//     text = 'Дата в будущем';
+// }
+// Пиши код ниже этой строки
+// console.log(text);
 //-------------------------------Example 10---------------------------------------------
 // Тема. Дедлайн сдачи проекта (switch)
 // Выполни рефакторинг кода задачи номер 5 используя switch.
@@ -155,13 +238,38 @@
 //   console.log('Дата в будущем');
 // }
 
+// switch (daysUntilDeadline) {
+//   case 0:
+//     text = 'Сегодня';
+//     break;
+//   case 1:
+//     text = 'Завтра';
+//     break;
+//   case 2:
+//     text = 'Послезавтра';
+//     break;
+//   default:
+//     text = 'Дата в будущем';
+// }
+// console.log(text);
+
 //-------------------------------Example 11---------------------------------------------
 // Тема. Цикл for
 // Напиши цикл for который выводит в консоль браузера числа по возрастанию от min до max, но только если число кратное 5.
 
 // const max = 100;
 // const min = 20;
+// вариант 1 (мин менятся не будет)
+// for (let i = min; i <= max; i += 5) {
+//   console.log('i', i);
+// }
 
+// вариант 1 (мин меняется)
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 5 === 0) {
+//     console.log('i', i);
+//   }
+// }
 //-------------------------------Example 12---------------------------------------------
 // Тема. Ввод пользователя и ветвления
 // Напиши скрипт, который будет спрашивать логин с помощью prompt и логировать результат в консоль браузера.
@@ -173,3 +281,25 @@
 
 // Если введён пароль "Я админ", то вывести строку "Здравствуйте!"
 // Иначе выводить строку "Неверный пароль"
+
+// let login = prompt('login');
+// let text;
+
+// if (login) {
+//   if (login === 'Админ') {
+//     const password = prompt('password');
+
+//     if (password === 'Я админ') {
+//       text = 'Здравствуйте!';
+//     } else {
+//       text = 'Неверный пароль';
+//     }
+//   } else {
+//     text = 'Я вас не знаю';
+//   }
+// } else {
+//   text = 'Отменено';
+// }
+
+// console.log(login);
+// console.log(text);
