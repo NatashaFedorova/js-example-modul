@@ -228,13 +228,13 @@
 // const string3 = 'Ваша заявка подверждена';
 
 // console.log(string1.includes(blacklistedWork1, blacklistedWork2));
-// true
+// true;
 // console.log(string1.includes(blacklistedWork1));
 // console.log(string1.includes(blacklistedWork2));
 
 // console.log(string2.includes(blacklistedWork1));
 // console.log(string2.toLowerCase().includes(blacklistedWork2));
-// можно еще записать по другому
+// // можно еще записать по другому
 // const normalizedString2 = string2.toLowerCase();
 // console.log(normalizedString2.includes(blacklistedWork2));
 
