@@ -325,7 +325,7 @@
 // 2. Розбиваємо на слова
 // 3. Зшиваємо строку з розподілювачем
 
-// має бути -
+// має бути - welcome-to-the-treehouse-community
 
 // const title = 'Welcome to the Treehouse Community';
 // console.log(title); // Welcome to the Treehouse Community

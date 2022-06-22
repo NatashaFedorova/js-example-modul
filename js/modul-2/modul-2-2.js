@@ -236,17 +236,158 @@
 //напиши функцію findSmallestNumber(numbers) для пошуку самого маленького числа в масиві
 // за умови, що числа унікальні (не повторюються)
 
-const findSmallestNumber = function (numbers) {
-  let smallestNumber = numbers[0];
+// const findSmallestNumber = function (numbers) {
+//   let smallestNumber = numbers[0];
 
-  for (const num of numbers) {
-    if (num < smallestNumber) {
-      smallestNumber = num;
-    }
-  }
-  return smallestNumber;
-};
+//   for (const num of numbers) {
+//     if (num < smallestNumber) {
+//       smallestNumber = num;
+//     }
+//   }
+//   return smallestNumber;
+// };
 
-console.log(findSmallestNumber([33, 22, 54, 15, 74])); // 15
-console.log(findSmallestNumber([200, 133, 54, 83])); // 54
-console.log(findSmallestNumber([22, 54, 15, -74, 200])); //-74
+// console.log(findSmallestNumber([33, 22, 54, 15, 74])); // 15
+// console.log(findSmallestNumber([200, 133, 54, 83])); // 54
+// console.log(findSmallestNumber([22, 54, 15, -74, 200])); //-74
+
+//-----------------------------------Задача 5(функції)--------------------------------
+// напиши функцію changeCase(string), яка змінює регістр кожного елемента в строчці на протилежний
+// приклад "JavaScript" => "jAVAsCRIPT"
+
+// const changeCase = function (string) {
+//   const letters = string.split('');
+//   console.log(letters);
+//   let invertedString = '';
+
+//   for (const letter of letters) {
+//     const isInLowerCase = letter === letter.toLowerCase();
+//     invertedString += isInLowerCase ? letter.toUpperCase() : letter.toLowerCase();
+//   }
+//   return invertedString;
+// };
+
+// console.log(changeCase('JavaScript')); // jAVAsCRIPT
+// console.log(changeCase('Natasha Fedorova')); // nATASHA fEDOROVA
+
+//-----------------------------------Задача 6(функції)--------------------------------
+// напиши функцію slugify(string), яка отримує строку і повертає URL-slug
+// строка складається тільки з літер и пробілів
+
+// const slugify = function (string) {
+//   return string.toLowerCase().split(' ').join('-');
+// };
+// console.log(slugify('Welcome to the Treehouse Community')); // welcome-to-the-treehouse-community
+// console.log(slugify('How to use the JavaScript console')); // how-to-use-the-javascript-console
+// console.log(slugify('Dark Mode Support in WebKit')); // dark-mode-support-in-webkit
+
+//------------------------------Псевдомасив arguments  та Array.from та...----------------------------
+
+// Псевдомасив arguments
+// const fn = function () {
+//   console.log(arguments);
+
+//   for (const arg of arguments) {
+//     console.log(arg);
+//   }
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7, 8);
+
+// Псевдомасив arguments перетворити в масив за допомогою Array.from (застарілий спосіб)
+// const fn = function () {
+//   console.log(arguments); // Arguments(3) [1, 2, 3, callee: (...), Symbol(Symbol.iterator): ƒ]
+
+//   const args = Array.from(arguments); // (3) [1, 2, 3]
+//   console.log(args);
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7, 8);
+
+// Псевдомасив arguments перетворити в масив за допомогою  ...(rest) (сучасній метод)
+// варіант аргументів 1--------------------------------------------------
+// const fn = function (...args) {
+//   console.log(args);
+// };
+
+// fn(1, 2, 3);
+// // запис в функції console.log(args); // [1, 2, 3]
+// fn(1, 2, 3, 4, 5);
+// //  запис в функціїconsole.log(args); // [1, 2, 3, 4, 5]
+// fn(1, 2, 3, 4, 5, 6, 7, 8);
+// // запис в функції console.log(args); // [1, 2, 3, 4, 5, 6, 7, 8]
+
+// варіант аргументів 2--------------------------------------------------
+// const fn = function (...args) {
+//   console.log(args);
+// };
+
+// fn('Mango', 1, 2, 3);
+// // запис в функції console.log(args); // ['Mango', 1, 2, 3]
+// fn('Apple', 1, 2, 3, 4, 5);
+// // запис в функції console.log(args); // ['Apple', 1, 2, 3, 4, 5]
+// fn('Pear', 1, 2, 3, 4, 5, 6, 7, 8);
+// // запис в функції console.log(args); // ['Pear', 1, 2, 3, 4, 5, 6, 7, 8]
+
+// варіант аргументів 3-------------------------------------------------
+// const fn = function (a, b, c, ...args) {
+//   console.log(`${a} ${b} ${c}`);
+//   console.log(args);
+// };
+
+// fn('Mango', 1, 2, 3);
+// // запис в функції console.log(args); // Mango 1 2 - псевдомасив, [3] - це масив
+// fn('Apple', 1, 2, 3, 4, 5);
+// // запис в функції console.log(args); // Apple 1 2 - псевдомасив, [3, 4, 5] - це масив
+// fn('Pear', 1, 2, 3, 4, 5, 6, 7, 8);
+// // запис в функції console.log(args); // Pear 1 2 - псевдомасив, [3, 4, 5, 6, 7, 8] - це масив
+
+//---------------------------------------Задача 7(...rest)--------------------------------------------
+// напиши функцію add для додавання довільної кількості аргументів (чисел)
+
+// const add = function (...args) {
+//   console.log(args);
+
+//   let total = 0;
+
+//   for (const arg of args) {
+//     total += arg;
+//   }
+//   return total;
+// };
+// console.log(add(1, 2, 3)); // 6
+// console.log(add(1, 2, 3, 4, 5, 6)); //21
+
+//---------------------------------------Задача 8(...rest)--------------------------------------------
+// Напиши функцію filterNumbers(array [, number1, ...]), яка:
+// Першим агрументом приймає масив чисел
+// після першого аргумента  може бути довільна кількість інших аргументів,
+// які будуть числами
+
+// Функція має повернути новий масив, в якому будуть лише ті аргументи,
+// починая з першого, для котрих є аналог в оригінальному масиві
+
+// const filterNumbers = function (array, ...args) {
+//   // console.log('array:', array);
+//   // console.log('args:', args);
+
+//   const uniqueElements = [];
+
+//   for (const element of array) {
+//     // console.log('element:', element);
+//     if (args.includes(element)) {
+//       uniqueElements.push(element);
+//       console.log(`${element}  є  в args`);
+//     }
+//   }
+
+//   return uniqueElements;
+// };
+
+// console.log(filterNumbers([1, 2, 3, 4], 51, 4, 2, 8)); // [2, 4]
+// console.log(filterNumbers([10, 20, 30, 40], 54, 10, 72, 20)); // [10, 20];
+// console.log(filterNumbers([100, 200, 300, 400], 5, 400, 73, 68)); // [400]
