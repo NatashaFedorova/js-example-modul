@@ -134,31 +134,143 @@
 // console.log(nonExtremeEls); // ['plum', 'pear', 'orange']
 
 // ------------------------------Задача 15------------------------------------
-function makeArray(firstArray, secondArray, maxLength) {
-  // Change code below this line
-}
-console.log(makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3)); // ['Mango', 'Poly', 'Ajax']
-console.log(makeArray(['Mango', 'Poly', 'Houston'], ['Ajax', 'Chelsea'], 4)); // ['Mango', 'Poly', 'Houston', 'Ajax']
-console.log(makeArray(['Mango'], ['Ajax', 'Chelsea', 'Poly', 'Houston'], 3)); // ['Mango', 'Ajax', 'Chelsea']
+// function makeArray(firstArray, secondArray, maxLength) {
+
+//   const allArray = firstArray.concat(secondArray);
+
+//   if (allArray.length > maxLength) {
+//     return allArray.slice(0, maxLength);
+//   }
+//   return allArray;
+// }
+// console.log(makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3)); // ['Mango', 'Poly', 'Ajax']
+// console.log(makeArray(['Mango', 'Poly', 'Houston'], ['Ajax', 'Chelsea'], 4)); // ['Mango', 'Poly', 'Houston', 'Ajax']
+// console.log(makeArray(['Mango'], ['Ajax', 'Chelsea', 'Poly', 'Houston'], 3)); // ['Mango', 'Ajax', 'Chelsea']
+// console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus', 'Venus'], 0)); // []
+
 // ------------------------------Задача 16------------------------------------
+// const start = 3;
+// const end = 7;
+
+// for (let i = start; i <= end; i += 1) {
+//   console.log(i);
+// }
 
 // ------------------------------Задача 17------------------------------------
+// function calculateTotal(number) {
+//   let total = 0;
+//   for (let i = 1; i <= number; i += 1) {
+//     total += i;
+//   }
+//   return total;
+// }
+
+// console.log(calculateTotal(1)); //1
+// console.log(calculateTotal(3)); // 6
+// console.log(calculateTotal(7)); // 28
 
 // ------------------------------Задача 18------------------------------------
+// const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+// for (let i = 0; i < fruits.length; i += 1) {
+//   const fruit = fruits[i];
+//   console.log(fruit);
+// }
 
 // ------------------------------Задача 19------------------------------------
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+
+//   return total;
+// }
+
+// console.log(calculateTotalPrice([12, 85, 37, 4])); // 138
+// console.log(calculateTotalPrice([164, 48, 291])); // 503
 
 // ------------------------------Задача 20------------------------------------
-
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+//   // Change code above this line
+//   return total;
+// }
 // ------------------------------Задача 21------------------------------------
+// function findLongestWord(string) {
+//
+//   const arr = string.split(' ');
+//   // console.log(arr); // ['The', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']
+//   let wordMaxLength = arr[0];
+//   // console.log(wordMaxLength);
+//   for (const word of arr) {
+//     // console.log(word);
+//     if (word.length > wordMaxLength.length) {
+//       wordMaxLength = word;
+//       // console.log(word);
+//     }
+//     wordMaxLength = wordMaxLength;
+//   }
+//   return wordMaxLength;
+//   // Change code above this line
+// }
+
+// console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // jumped
+// console.log(findLongestWord('Google do a roll')); // Google
+// console.log(findLongestWord('May the force be with you')); // force
 
 // ------------------------------Задача 22------------------------------------
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+//   // Change code below this line
+//   // numbers.push(min);
+//   // console.log(numbers);
+//   for (let i = min; i <= max; i += 1) {
+//     numbers.push(i);
+//     // console.log(numbers);
+//   }
+//   // Change code above this line
+//   return numbers;
+// }
+// console.log(createArrayOfNumbers(1, 3)); // [1, 2, 3]
+// console.log(createArrayOfNumbers(14, 17)); // [14, 15, 16, 17]
+// console.log(createArrayOfNumbers(29, 34)); // [29, 30, 31, 32, 33, 34]
 
 // ------------------------------Задача 23------------------------------------
+// function filterArray(numbers, value) {
+
+//   const newArray = [];
+
+//   for (const number of numbers) {
+//     if (number > value) {
+//       newArray.push(number);
+//     }
+//   }
+//   return newArray;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
 
 // ------------------------------Задача 24------------------------------------
+// function checkFruit(fruit) {
+//   const fruits = ['apple', 'plum', 'pear', 'orange'];
+//   return fruits.includes(fruit);
+// }
 
 // ------------------------------Задача 25------------------------------------
+function getCommonElements(array1, array2) {
+  // Change code below this line
+  // Change code above this line
+}
+console.log(getCommonElements([1, 2, 3], [2, 4])); // [2]
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // [12, 27, 3]
+console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // []
 
 // ------------------------------Задача 26------------------------------------
 
