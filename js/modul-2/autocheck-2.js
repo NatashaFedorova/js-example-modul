@@ -264,24 +264,107 @@
 // }
 
 // ------------------------------Задача 25------------------------------------
-function getCommonElements(array1, array2) {
-  // Change code below this line
-  // Change code above this line
-}
-console.log(getCommonElements([1, 2, 3], [2, 4])); // [2]
-console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // [12, 27, 3]
-console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // []
+// function getCommonElements(array1, array2) {
+//   // Change code below this line
+//   const array3 = [];
+
+//   for (const arr of array1) {
+//     console.log(arr);
+
+//     if (array1.includes(arr) && array2.includes(arr)) {
+//       array3.push(arr);
+//     }
+//   }
+//   return array3;
+//   // Change code above this line
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4])); // [2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // [12, 27, 3]
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // []
 
 // ------------------------------Задача 26------------------------------------
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+//   for (const element of order) {
+//     total += element;
+//   }
+
+//   return total;
+// }
 
 // ------------------------------Задача 27------------------------------------
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+
+//   for (const number of numbers) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+//   return filteredNumbers;
+// }
 
 // ------------------------------Задача 28------------------------------------
+// const a = 3 % 1;
+// const b = 4 % 3;
+// const c = 11 % 8;
+// const d = 12 % 7;
+// const e = 8 % 3;
 
 // ------------------------------Задача 29------------------------------------
+// function getEvenNumbers(start, end) {
+
+//   let array = [];
+//   for (let i = start; i <= end; i += 1) {
+//     if (i % 2 === 0) {
+//       array.push(i);
+//     }
+//   }
+//   return array;
+
+// }
+
+// console.log(getEvenNumbers(2, 5)); // [2, 4]
+// console.log(getEvenNumbers(3, 11)); // [4, 6, 8, 10]
+// console.log(getEvenNumbers(6, 12)); // [6, 8, 10, 12]
+// console.log(getEvenNumbers(8, 8)); // [8]
 
 // ------------------------------Задача 30------------------------------------
+// const start = 6;
+// const end = 27;
+// let number;
+
+// for (let i = start; i < end; i += 1) {
+//   if (i % 5 === 0) {
+//     number = i;
+//     break;
+//   }
+// }
 
 // ------------------------------Задача 31------------------------------------
+// function findNumber(start, end, divisor) {
+//   // Change code below this line
+//   let number;
+
+//   for (let i = start; i < end; i += 1) {
+//     if (i % divisor === 0) {
+//       number = i;
+//       return number;
+//     }
+//   }
+
+//   // Change code above this line
+// }
 
 // ------------------------------Задача 32------------------------------------
+// function includes(array, value) {
+//   for (const arr of array) {
+//     console.log(arr);
+//     if (arr === value) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(includes([1, 2, 3, 4, 5], 3)); // [true]
