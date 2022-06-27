@@ -314,7 +314,6 @@
 
 // ------------------------------Задача 29------------------------------------
 // function getEvenNumbers(start, end) {
-
 //   let array = [];
 //   for (let i = start; i <= end; i += 1) {
 //     if (i % 2 === 0) {
@@ -322,7 +321,6 @@
 //     }
 //   }
 //   return array;
-
 // }
 
 // console.log(getEvenNumbers(2, 5)); // [2, 4]
