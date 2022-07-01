@@ -12,27 +12,27 @@
 // {name: "🍑", price: 60}
 // {name: "🍌", price: 110}
 
-const cart = {
-  items: [],
-  getItems() {},
-  add(product) {},
-  remove(productName) {},
-  clear() {},
-  countTotalPrice() {},
-  increaseQuantity(productName) {},
-  decreaseQuantity(productName) {},
-};
+// const cart = {
+//   items: [],
+//   getItems() {},
+//   add(product) {},
+//   remove(productName) {},
+//   clear() {},
+//   countTotalPrice() {},
+//   increaseQuantity(productName) {},
+//   decreaseQuantity(productName) {},
+// };
 
 // console.table(cart.getItems());
 
-cart.add({ name: '🍎', price: 50 });
-cart.add({ name: '🍇', price: 70 });
-cart.add({ name: '🍑', price: 60 });
-cart.add({ name: '🍌', price: 110 });
+// cart.add({ name: '🍎', price: 50 });
+// cart.add({ name: '🍇', price: 70 });
+// cart.add({ name: '🍑', price: 60 });
+// cart.add({ name: '🍌', price: 110 });
 
 // console.table(cart.getItems());
 
-cart.remove('🍎');
+// cart.remove('🍎');
 // console.table(cart.getItems());
 
 // cart.clear();
@@ -45,4 +45,4 @@ cart.remove('🍎');
 // cart.decreaseQuantity('🍇');
 // console.table(cart.getItems());
 
-console.log('Total:', cart.countTotalPrice());
+// console.log('Total:', cart.countTotalPrice());
