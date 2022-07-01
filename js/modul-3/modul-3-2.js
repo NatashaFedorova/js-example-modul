@@ -200,7 +200,7 @@
 // };
 // const {
 //   name: nameFirst,
-//   rating: ratingFirst,
+//   rating: ratingFirst = 0,
 //   tracks: tracksFirst,
 //   trackCount: trackCountFirst,
 //   author: authorFirst,
@@ -215,7 +215,7 @@
 // };
 // const {
 //   name: nameSecond,
-//   rating: ratingSecond,
+//   rating: ratingSecond = 0,
 //   tracks: tracksSecond,
 //   trackCount: trackCountSecond,
 //   author: authorSecond,
@@ -225,16 +225,184 @@
 // console.log('tracksSecond', tracksSecond); // tracksSecond (2) ['Save yourself ', 'I can’t go on without you']
 
 //--------------------------------------Глубокая деструктуризация объекта------------------------------------
-// const user = {
+// const profile = {
 //   nameUser: 'Jacques Gluke',
 //   tag: 'jgluke',
 //   location: {
-//     country: Ukraine,
-//     city: Kiev,
+//     country: 'Ukraine',
+//     city: 'Kiev',
 //   },
 //   stats: {
 //     followers: 5603,
 //     views: 4827,
 //     likes: 1308,
 //   },
+//   first: {
+//     second: {
+//       third: 10,
+//     },
+//   },
 // };
+
+// const { nameUser, tag } = profile;
+// console.log('nameUser:', nameUser, 'tag:', tag); //nameUser: Jacques Gluke tag: jgluke
+
+// вариант 1(глубокой деструк-и)-------------------
+// const { country, city } = profile.location;
+// console.log(country, city); // Ukraine Kiev
+
+// вариант 2(глубокой деструк-и)--------------------
+// const {
+//   nameUser,
+//   tag,
+//   location: { country, city },
+
+//   stats: { followers, views, likes },
+//   first: {
+//     second: { third },
+//   },
+// } = profile;
+
+// console.log(followers, views, likes); // 5603 4827 1308
+// console.log(country, city); // Ukraine Kiev
+// console.log(nameUser, tag, country, city, followers, views, likes); // Jacques Gluke jgluke Ukraine Kiev 5603 4827 1308
+// console.log(third); //10
+
+// вариант 3(глубокой деструк-и)-------------------
+// const { nameUser, tag, location, stats } = profile;
+
+// const { country, city } = location;
+// const { followers, views, likes } = stats;
+
+// console.log(country, city); // Ukraine Kiev
+// console.log(followers, views, likes); // 5603 4827 1308
+
+// undefined (глубокой деструк-и)-------------------
+// const { country, city } = location;
+// console.log(country, city); // undefined undefined
+
+//--------------------------------Деструктуризация массива------------------------------
+// const rgb = [255, 100, 80];
+// const [red, , blue] = rgb;
+
+// console.log(red); // 255
+// console.log(green); // 100
+// console.log(blue); // 80
+
+// console.log(red, green, blue); //255 100 80
+
+// пропускаем елемент
+// const rgb = [255, 100, 80];
+// const [red, , blue] = rgb;
+// console.log(red, blue); //255 80
+
+//--------------------------------Деструктуризация объекта (пример)- entries----------------------------
+// найти самый высокий рейтинг
+// const authors = {
+//   kiwi: 4,
+//   poly: 7,
+//   ajax: 9,
+//   mango: 6,
+// };
+
+// способ 1
+// const rating = Object.values(authors);
+// console.log(Math.max(...rating)); // 9
+
+// способ 2
+// const keys = Object.keys(authors);
+
+// for (const key of keys) {
+//   console.log(key); //9 // и т.д.
+//   console.log(authors[key]); // kiwi // и т д
+// }
+
+// способ 3 - Object.entries()!!!!!!!=================================!!!!!
+// const entries = Object.entries(authors);
+// console.log(entries); // результат в консоле ниже
+// [Array(2), Array(2), Array(2), Array(2)]
+// 0: (2) ['kiwi', 4]
+// 1: (2) ['poly', 7]
+// 2: (2) ['ajax', 9]
+// 3: (2) ['mango', 6]
+// for (const entry of entries) {
+//   console.log(entry); // (2) ['kiwi', 4]
+
+//   // запись  - вариант 1
+//   //   const name = entry[0];
+//   //   const raiting = entry[1];
+
+//   // запись  - вариант 2
+//   // const [name, raiting] = entry;
+
+//   console.log(name, raiting); //kiwi 4
+// }
+
+// запись - вариант 3
+// for (const [name, raiting] of entries) {
+//   console.log(name, raiting); // kiwi 4
+// }
+
+//---------------------------------------------(...rest)----------------------------------
+// const profile = {
+//   nameUser: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Kiev, Ukraine',
+//   avatar: 'link',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+// const { nameUser, tag, location, ...restProps } = profile;
+// console.log(nameUser, tag, location); // Jacques Gluke jgluke Kiev, Ukraine
+// console.log(restProps); // {avatar: 'link', stats: {…}}
+
+//--------------------------------Патерн "Объект настроек (параматров)"--------------------
+// const fn = function (params) {};
+
+// вызов функции - не читабельно
+// fn(10, 5, true, [], {}, 6);
+
+// вызов функции - удобно для понимания и прочтения
+// fn({
+//   age: 10,
+//   friends: 5,
+//   isOnline: true,
+//   hobbies: [],
+//   games: {},
+//   rating: 6,
+// });
+
+//--------------------------------Патерн "Объект настроек (параматров)" - пример--------------------
+const showProfileInfo = function (userProfile) {
+  console.log(userProfile); // {nameUser: 'Jacques Gluke', tag: 'jgluke', location: 'Kiev, Ukraine', avatar: 'link', stats: {…}}
+};
+
+// вариант 1
+// const profile = {
+//   nameUser: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Kiev, Ukraine',
+//   avatar: 'link',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+// showProfileInfo(profile);
+
+// вариант 2
+// showProfileInfo({
+//   nameUser: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Kiev, Ukraine',
+//   avatar: 'link',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// });
