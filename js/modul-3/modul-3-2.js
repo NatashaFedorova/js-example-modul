@@ -376,9 +376,9 @@
 // });
 
 //--------------------------------Патерн "Объект настроек (параматров)" - пример--------------------
-const showProfileInfo = function (userProfile) {
-  console.log(userProfile); // {nameUser: 'Jacques Gluke', tag: 'jgluke', location: 'Kiev, Ukraine', avatar: 'link', stats: {…}}
-};
+// const showProfileInfo = function (userProfile) {
+//   console.log(userProfile); // {nameUser: 'Jacques Gluke', tag: 'jgluke', location: 'Kiev, Ukraine', avatar: 'link', stats: {…}}
+// };
 
 // вариант 1
 // const profile = {
@@ -406,3 +406,111 @@ const showProfileInfo = function (userProfile) {
 //     likes: 1308,
 //   },
 // });
+
+// вариант 3
+// const showProfileInfo = function (userProfile) {
+//   const {
+//     nameUser,
+//     tag,
+//     location,
+//     avatar,
+//     stats: { followers, views, likes },
+//   } = userProfile;
+
+//   console.log(nameUser, tag, location, avatar, followers, views, likes); // Jacques Gluke jgluke Kiev, Ukraine link 5603 4827 1308
+// };
+
+// showProfileInfo({
+//   nameUser: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Kiev, Ukraine',
+//   avatar: 'link',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// });
+
+// вариант 4
+// const showProfileInfo = function ({
+//   nameUser,
+//   tag,
+//   location,
+//   avatar,
+//   stats: { followers, views, likes },
+// }) {
+//   console.log(nameUser, tag, location, avatar, followers, views, likes); // Jacques Gluke jgluke Kiev, Ukraine link 5603 4827 1308
+// };
+
+// showProfileInfo({
+//   nameUser: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Kiev, Ukraine',
+//   avatar: 'link',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// });
+
+// вариант 5
+// const showProfileInfo = function ({ nameUser, tag, location, ...rest }) {
+//   console.log(nameUser, tag, location); // Jacques Gluke jgluke Kiev, Ukraine
+//   console.log(rest); // {avatar: 'link', stats: {…}}
+// };
+
+// showProfileInfo({
+//   nameUser: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Kiev, Ukraine',
+//   avatar: 'link',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// });
+
+//------------------------------------------Profile(начало index.html строка 21)
+// const profile = {
+//   nameUser: 'Jacques Gluke',
+//   tag: 'jgluke',
+//   location: 'Kiev, Ukraine',
+//   avatar: 'link',
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+// // showProfileInfo(profile);
+
+// const makeProfileMarkup = function (userProfile) {
+//   const {
+//     avatar = './images/look.com.ua-317815.jpg',
+//     nameUser,
+//     tag,
+//     location = 'Europe',
+//     stats: { followers, views, likes },
+//   } = userProfile;
+
+//   return `<div>
+//       <img src="${avatar}" alt="Foto"/>
+//       <p>Name: ${nameUser}</p>
+//       <p>Tag: ${tag}</p>
+//       <p>Location: ${location}</p>
+//       <ul>
+//         <li>Followers: ${followers}</li>
+//         <li>Views: ${views}</li>
+//         <li>Likes: ${likes}</li>
+//       </ul>
+//     </div>`;
+// };
+
+// const markup = makeProfileMarkup(profile);
+
+// console.log(markup);
+
+// document.body.insertAdjacentHTML('afterbegin', markup);
