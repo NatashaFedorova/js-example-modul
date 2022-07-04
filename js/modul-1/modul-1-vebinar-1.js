@@ -79,7 +79,7 @@
 
 // console.log(bmi.toFixed(1)); // 28.8
 
-// короткая запись кода
+// // короткая запись кода
 // const weight = Number.parseFloat('88,3'.replace(',', '.'));
 // const height = Number.parseFloat('1.75'.replace(',', '.'));
 
