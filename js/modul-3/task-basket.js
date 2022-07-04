@@ -37,7 +37,7 @@
 //       }
 //     }
 
-    //   ниже добавляем свойство (количество) объекту (продукту)
+//     //   ниже добавляем свойство (количество) объекту (продукту)
 //     const newProduct = {
 //       ...product,
 //       quantity: 1,
@@ -46,11 +46,11 @@
 //   },
 
 //   remove(productName) {
-    //  дестректуризация this.items
-    // const { items } = this;
+//     //  дестректуризация this.items
+//     const { items } = this;
 
-    // for (let i = 0; i < items.length; i += 1) {
-      //  дестректуризация this.items.name
+//     for (let i = 0; i < items.length; i += 1) {
+//       //    дестректуризация this.items.name
 //       const { name } = items[i];
 
 //       if (productName === name) {
@@ -65,7 +65,7 @@
 //     const { items } = this;
 //     let total = 0;
 
-    //   декструктуризация item.price в { price } сразу
+//     //   декструктуризация item.price в { price } сразу
 //     for (const { price, quantity } of items) {
 //       total += price * quantity;
 //     }
@@ -91,6 +91,12 @@
 //     for (const item of items) {
 //       if (item.name === productName) {
 //         item.quantity -= 1;
+
+// этот if удаляет товар из корзины, если его колиество 0,
+// эту часть лучше перенести в другю функцию
+//         if (item.quantity === 0) {
+//           this.remove(productName);
+//         }
 //         return;
 //       }
 //     }
@@ -120,10 +126,12 @@
 // console.log(cart.getItems());
 
 // cart.increaseQuantity('🍎');
-// cart.increaseQuantity('🍑');
+// cart.increaseQuantity('🍇');
 // console.table(cart.getItems());
 
 // cart.decreaseQuantity('🍇');
 // cart.decreaseQuantity('🍇');
+// cart.decreaseQuantity('🍇');
+// console.table(cart.getItems());
 // cart.decreaseQuantity('🍇');
 // console.table(cart.getItems());
