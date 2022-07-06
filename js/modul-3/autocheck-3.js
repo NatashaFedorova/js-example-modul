@@ -708,15 +708,14 @@ const atTheOldToad = {
     return `Potion ${potionName} is not in inventory!`;
   },
   updatePotionName(oldName, newName) {
-    const potionIndex = this.potions.indexOf(oldName);
-
-    if (potionIndex === -1) {
-      return `Potion ${oldName} is not in inventory!`;
+    const { potions } = this;
+    for (let i = 0; i < potions.length; i += 1) {
+      if (potions[i].name === oldName) {
+        potions[i].name = newName;
+      }
     }
-
-    this.potions.splice(potionIndex, 1, newName);
+    // Change code above this line
   },
-  // Change code above this line
 };
 
 console.log(atTheOldToad.getPotions());
