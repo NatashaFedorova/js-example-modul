@@ -425,18 +425,18 @@
 // цель вернуть  массив из чисел меньше или равно 4
 // цель вернуть  массив из элементов ,у которых  isFresh: true
 
-// const filter = (array, test) => {
-//   const filteredArray = [];
-//   for (const number of array) {
-//     const passed = test(number); // значением будет результат проверки number (turue/false)
+const filter = (array, test) => {
+  const filteredArray = [];
+  for (const number of array) {
+    const passed = test(number); // значением будет результат проверки number (turue/false)
 
-//     if (passed) {
-//       filteredArray.push(number);
-//     }
-//   }
+    if (passed) {
+      filteredArray.push(number);
+    }
+  }
 
-//   return filteredArray;
-// };
+  return filteredArray;
+};
 
 // 1. передать функцию
 // 2. функция получает элемент массива
@@ -455,11 +455,11 @@
 // console.log(r1); //[3, 4, 5]
 
 // цель вернуть  массив из чисел меньше или равно 4
-// const r2_1 = filter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], number => number <= 4 && number > 2);
-// console.log(r2_1); // [3, 4]
+const r2_1 = filter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], number => number <= 4 && number > 2);
+console.log(r2_1); // [3, 4]
 
-// const r2_2 = filter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], number => number <= 4);
-// console.log(r2_2); // [1, 2, 3, 4]
+const r2_2 = filter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], number => number <= 4);
+console.log(r2_2); // [1, 2, 3, 4]
 
 // вернуть те элементы,у которых  isFresh: true
 // const fruits = [
