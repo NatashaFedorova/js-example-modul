@@ -339,15 +339,15 @@
 // console.log(tagsStats); // {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
 
 // ===================================Повтор инфо про объект=========================================
-const obj = {
-  name: 'Apple',
-  color: 'blue',
-  quantity: 4,
-};
-console.log(Object.keys(obj)); // ['name', 'color', 'quantity'];
-console.log(Object.values(obj)); // ['Apple', 'blue', 4]
-console.log(obj.name); // Apple
-console.log(obj['name']); // Apple
+// const obj = {
+//   name: 'Apple',
+//   color: 'blue',
+//   quantity: 4,
+// };
+// console.log(Object.keys(obj)); // ['name', 'color', 'quantity'];
+// console.log(Object.values(obj)); // ['Apple', 'blue', 4]
+// console.log(obj.name); // Apple
+// console.log(obj['name']); // Apple
 
-const key = 'name';
-console.log(obj[key]); // Apple
+// const key = 'name';
+// console.log(obj[key]); // Apple
