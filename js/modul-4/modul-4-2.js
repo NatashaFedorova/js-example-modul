@@ -227,23 +227,54 @@
 // console.log(onlineAndSorted);
 
 // ===================================Стрелочные функциии (цепочка методов) Задача 1-3==============================
+// const players = [
+//   { id: 'player-1', name: 'Mango', timePlayed: 310, isOnline: true, points: 54 },
+//   { id: 'player-2', name: 'Kiwi', timePlayed: 240, isOnline: false, points: 92 },
+//   { id: 'player-3', name: 'Pear', timePlayed: 180, isOnline: true, points: 48 },
+//   { id: 'player-4', name: 'Cherry', timePlayed: 470, isOnline: true, points: 71 },
+//   { id: 'player-5', name: 'Ajax', timePlayed: 50, isOnline: false, points: 48 },
+// ];
+// console.table(players);
+// обычная функция==========================================
 // увеличить количество points
+// const updatedPlayers = players.map(function (player) {
+//   return {
+//     ...player,
+//     points: player.points + player.points * 0.1,
+//   };
+// });
+// console.table(updatedPlayers);
+
+//стрелочные функциии=======================================
+// const updatedPlayers = players.map(player => ({
+//   ...player,
+//     points: player.points + player.points * 0.1
+// }));
+// console.table(updatedPlayers);
+
+// обычная функция ==========================================
 // увеличить количество часов игрока по id
-// обычная функция
-const players = [
-  { id: 'player-1', name: 'Mango', timePlayed: 310, isOnline: true, points: 54 },
-  { id: 'player-2', name: 'Kiwi', timePlayed: 240, isOnline: false, points: 92 },
-  { id: 'player-3', name: 'Pear', timePlayed: 180, isOnline: true, points: 48 },
-  { id: 'player-4', name: 'Cherry', timePlayed: 470, isOnline: true, points: 71 },
-  { id: 'player-5', name: 'Ajax', timePlayed: 50, isOnline: false, points: 48 },
-];
 
-const upatedPlayers = players.map(function (player) {
-  return {
-    ...player,
-    points: player.points + player * 0.1,
-  };
-});
+// const playerIdToUpdate = 'player-3';
 
-console.table(upatedPlayers);
+// const updatedPlayers = players.map(function (player) {
+//   if (player.id === playerIdToUpdate) {
+//     return {
+//       ...player,
+//       timePlayed: player.timePlayed + 50,
+//     };
+//   }
+//   return player;
+// });
+
+// console.table(updatedPlayers);
+
 //стрелочные функциии
+// const playerIdToUpdate = 'player-3';
+
+// const updatedPlayers = players.map(player =>
+//   //  ниже используется spread(распыление части "родительсткого")
+//   player.id === playerIdToUpdate ? { ...player, timePlayed: player.timePlayed + 50 } : player
+// );
+
+// console.table(updatedPlayers);
