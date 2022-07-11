@@ -28,6 +28,7 @@
 // Числа могут быть отрицательными или нецелыми.
 // Если массив не содержит чисел, вы должны вернуть 0.
 
+// вариант 1
 // function sum(numbers) {
 //   let total = 0;
 //   for (const num of numbers) {
@@ -36,3 +37,6 @@
 
 //   return total;
 // }
+
+// вариант 2
+// const sum = numbers => numbers.reduce((acc, num) => acc + num, 0);
