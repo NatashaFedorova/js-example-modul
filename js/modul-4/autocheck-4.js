@@ -506,29 +506,135 @@
 
 // =================================Задача 35============================================
 // МЕТОД reduce() І МАСИВ ОБ'ЄКТІВ
+// const players = [
+//   { name: 'Mango', playtime: 1270, gamesPlayed: 4 },
+//   { name: 'Poly', playtime: 469, gamesPlayed: 2 },
+//   { name: 'Ajax', playtime: 690, gamesPlayed: 3 },
+//   { name: 'Kiwi', playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const test = players.reduce((acc, player) => acc + player.playtime / player.gamesPlayed, 0);
+
+// console.log(test);
+// console.log(totalAveragePlaytimePerGame);
 
 // =================================Задача 36============================================
+// ЗАГАЛЬНИЙ БАЛАНС КОРИСТУВАЧІВ
+// масив строчка 323
+// const calculateTotalBalance = users => users.reduce((acc, user) => acc + user.balance, 0);
 
 // =================================Задача 37============================================
+// ЗАГАЛЬНА КІЛЬКІСТЬ ДРУЗІВ
+// масив строчка 323
+// const getTotalFriendCount = users => users.reduce((acc, user) => acc + user.friends.length, 0);
 
 // =================================Задача 38============================================
+// МЕТОД sort()
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = ['Tanith Lee', 'Bernard Cornwell', 'Robert Sheckley', 'Fyodor Dostoevsky'];
+
+// const ascendingReleaseDates = [...releaseDates].sort();
+
+// const alphabeticalAuthors = [...authors].sort();
+
+// console.log(ascendingReleaseDates);
+// console.log(alphabeticalAuthors);
 
 // =================================Задача 39============================================
+// СВІЙ ПОРЯДОК СОРТУВАННЯ ЧИСЕЛ
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+
+// const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+
+// const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
 
 // =================================Задача 40============================================
+// СВІЙ ПОРЯДОК СОРТУВАННЯ РЯДКІВ
+// const authors = [
+//   'Tanith Lee',
+//   'Bernard Cornwell',
+//   'Robert Sheckley',
+//   'Fyodor Dostoevsky',
+//   'Howard Lovecraft',
+// ];
+// // Change code below this line
+
+// const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
+
+// const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
 
 // =================================Задача 41============================================
+// СОРТУВАННЯ ОБ'ЄКТІВ
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+// ];
+// // Change code below this line
+
+// const sortedByAuthorName = [...books].sort((a, b) => a.author.localeCompare(b.author));
+
+// const sortedByReversedAuthorName = [...books].sort((a, b) => b.author.localeCompare(a.author));
+
+// const sortedByAscendingRating = [...books].sort((a, b) => a.rating - b.rating);
+
+// const sortedByDescentingRating = [...books].sort((a, b) => b.rating - a.rating);
 
 // =================================Задача 42============================================
+// СОРТУВАННЯ ЗА БАЛАНСОМ
+// масив строчка 323
+// const sortByAscendingBalance = users => [...users].sort((a, b) => a.balance - b.balance);
 
 // =================================Задача 43============================================
-
+// СОРТУВАННЯ ЗА КІЛЬКІСТЮ ДРУЗІВ
+// const sortByDescendingFriendCount = users =>
+//   [...users].sort((a, b) => b.friends.length - a.friends.length);
 // =================================Задача 44============================================
+// СОРТУВАННЯ ЗА ІМ'ЯМ
+// const sortByName = users => [...users].sort((a, b) => a.name.localeCompare(b.name));
 
 // =================================Задача 45============================================
+// ЛАНЦЮЖКИ МЕТОДІВ (ЧЕЙНІНГ, CHAINING)
+//  об'єкт зі строчки 567
+// const MIN_BOOK_RATING = 8;
 
+// const names = [...books]
+//   .filter(book => book.rating > MIN_BOOK_RATING)
+//   .map(({ author }) => author)
+//   .sort((a, b) => a.localeCompare(b));
+
+// console.log(names(books));
 // =================================Задача 46============================================
+//КОРИСТУВАЧІ І ДРУЗІ
+// const getNamesSortedByFriendCount = users =>
+//   [...users].sort((a, b) => a.friends.length - b.friends.length).map(({ name }) => name);
+// console.log(getNamesSortedByFriendCount);
 
 // =================================Задача 47============================================
+// ІМЕНА ДРУЗІВ
+// const getSortedFriends = users =>
+//   [...users]
+//     .flatMap(user => user.friends)
+//     .filter((friendsName, idx, friendsNames) => friendsNames.indexOf(friendsName) === idx)
+//     .sort((a, b) => a.localeCompare(b));
 
 // =================================Задача 48============================================
+// ЗАГАЛЬНИЙ БАЛАНС
+// const getTotalBalanceByGender = (users, gender) =>
+//   [...users].filter(user => user.gender === gender).reduce((acc, { balance }) => acc + balance, 0);
+
+// console.log(getTotalBalanceByGender(users, 'female'));
