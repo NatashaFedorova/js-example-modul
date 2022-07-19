@@ -1,0 +1,13 @@
+.counter {
+  display: flex;
+  align-items: center;
+}
+.btn {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1;
+}
+.text {
+  margin: 0 25px;
+  font-size: 36px;
+}

@@ -183,3 +183,201 @@
 // outerShowTitle(); //Uncaught TypeError: Cannot read properties of undefined (reading 'title')
 
 // =============================this пример 4================================
+// const makeChangeColor = function () {
+//   const changeColor = function (color) {
+//     console.log('changeColor -> this:', this);
+//     // this.color = color;
+//   };
+
+//   //   changeColor(); //changeColor -> this: undefined
+
+//   const sweater = {
+//     color: 'teal',
+//   };
+
+//   sweater.updateColor = changeColor;
+
+//   //   sweater.updateColor(); // changeColor -> this: {color: 'teal', updateColor: ƒ} // объект - sweater
+
+//   return sweater.updateColor;
+// };
+
+// const sweapColor = makeChangeColor();
+
+// sweapColor('blue'); //changeColor -> this: undefined
+
+// =============================this пример 5================================
+// const makeChangeColor = function () {
+//   const changeColor = function (color) {
+//     console.log('changeColor -> this:', this);
+//   };
+//   return changeColor;
+// };
+
+// const updateColor = makeChangeColor();
+
+// updateColor('yellow'); // changeColor -> this: undefined
+
+// const hat = {
+//   color: 'blue',
+//   updateColor,
+// };
+
+// hat.updateColor('orange'); //changeColor -> this: {color: 'blue', updateColor: ƒ}
+
+// console.log(hat.updateColor);
+// консоль // ƒ (color) {
+//     console.log('changeColor -> this:', this);
+//   }
+
+// =============================this пример пример===============================
+// при передаче методов объектов, как callback-функций
+//  привязка к объекту не сохраняется и this - undefined
+// const counter = {
+//   value: 0,
+//   increment(value) {
+//     console.log('increment -> this:', this);
+//     this.value += value;
+//   },
+
+//   decrement(value) {
+//     console.log('decrement -> this:', this);
+//     this.value -= value;
+//   },
+// };
+// const updateCounter = function (value, operation) {
+//   operation(value);
+// };
+// updateCounter(10, counter.increment); // increment -> this: undefined
+// updateCounter(5, counter.decrement); // decrement -> this: undefined
+
+// =================================this. call пример======================================
+// пример без аргументов==================================
+// const showThis = function () {
+//   console.log('showThis -> this:', this);
+// };
+
+// showThis(); // showThis -> this: undefined
+
+// const objA = {
+//   a: 5,
+//   b: 10,
+// };
+
+// showThis.call(objA); // showThis -> this: {a: 5, b: 10}
+
+// пример с  аргументами=================================
+// const showThis = function (...args) {
+//   console.log(args);
+//   console.log('showThis -> this:', this);
+// };
+
+// const objA = {
+//   a: 5,
+//   b: 10,
+// };
+
+// showThis.call(objA, 10, 20, 30, 40);
+// [10, 20, 30, 40]
+// showThis -> this: {a: 5, b: 10}
+
+// const book = {
+//   title: 'Заповіт',
+//   author: 'Тарас Шевченко',
+// };
+
+// showThis.call(book, 10);
+// [10]
+// showThis -> this: {title: 'Заповіт', author: 'Тарас Шевченко'}
+
+// =================================this. apply пример======================================
+// const showThis = function (a, b, c) {
+//   console.log(a, b, c);
+//   console.log('showThis -> this:', this);
+// };
+
+// const objA = {
+//   a: 5,
+//   b: 10,
+// };
+
+// showThis.apply(objA, [10, 20, 30]);
+// 10 20 30
+// showThis -> this: {a: 5, b: 10}
+
+// const book = {
+//   title: 'Заповіт',
+//   author: 'Тарас Шевченко',
+// };
+
+// showThis.apply(book, [10]);
+// 10 undefined undefined
+// showThis -> this: {title: 'Заповіт', author: 'Тарас Шевченко'}
+
+// =================================this. call пример======================================
+// const changeColor = function (color) {
+//   this.color = color;
+//   console.log('changeColor -> this:', this);
+// };
+
+// const hat = {
+//   color: 'red',
+// };
+
+// changeColor.call(hat, 'orange'); // changeColor -> this: {color: 'orange'}
+
+// const sweater = {
+//   color: 'violet',
+// };
+
+// changeColor.call(sweater, 'tomato'); // changeColor -> this: {color: 'tomato'}
+
+// =================================this. bind пример======================================
+// bind - делает копию функции с привязанным навсегда  объектом
+// при этом сам объект не меняется(не получает новых методов)
+
+// const changeColor = function (color) {
+//   this.color = color;
+//   console.log('changeColor -> this:', this);
+// };
+
+// const hat = {
+//   color: 'red',
+// };
+
+// const changeHatColor = changeColor.bind(hat);
+
+// const sweater = {
+//   color: 'violet',
+// };
+
+// const changeSweaterColor = changeColor.bind(sweater);
+
+// changeColor(); // changeColor -> this: undefined
+
+// changeHatColor('teal'); // changeColor -> this: {color: 'teal'}
+
+// changeSweaterColor('tomato'); // changeColor -> this: {color: 'tomato'}
+
+// console.log(hat); // {color: 'teal'}
+
+// =================================this. bind пример======================================
+// const counter = {
+//   value: 0,
+//   increment(value) {
+//     console.log('increment -> this:', this);
+//     this.value += value;
+//   },
+
+//   decrement(value) {
+//     console.log('decrement -> this:', this);
+//     this.value -= value;
+//   },
+// };
+// const updateCounter = function (value, operation) {
+//   operation(value);
+// };
+// updateCounter(10, counter.increment.bind(counter)); // increment -> this: {value: 0, increment: ƒ, decrement: ƒ}
+// updateCounter(5, counter.decrement.bind(counter)); //decrement -> this: {value: 10, increment: ƒ, decrement: ƒ}
+
+// console.log(counter); // {value: 5, increment: ƒ, decrement: ƒ}
