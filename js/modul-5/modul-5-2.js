@@ -1,4 +1,26 @@
 // =================================Прототипное наследование=====================================
+// 1. У каждого объекта есть свойство __proto__
+// 2. В этом свойстве лежит ссылкана его протопип, другой объект
+// 3. При создании литерала объекта в ссылку  __proto__ записыается ссылка на Функция.prototype
+// 4. Функция-конструктор - это просто функция
+// 5. Всю магию делает оператор new
+// 6. Если функция вызывается  через new, создается пустой объект
+// 7. Функция вызывается в контексте созданного объекта
+// 8. В свойство this.__proto__ записывается  ссылка на объект Функция.prototype
+// 9. Сссылка на объект возвращается в место вызова new Функция ()
+// ===============================================================================================
+// !пример к путкту 3!===============================
+// const objA = {
+//   x: 10,
+// };
+// console.log(objA); // {x: 10}
+// console.log(objA.__proto__); // {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+// console.log(Object.prototype); // {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+// console.log(objA.__proto__ === Object.prototype); // true
+
+// !пример к путкту 8!===============================
+// this = Object.create(User.prototype); // где  this -> User.prototype
+//=============================================hasOwnProperty=====================================
 // const obj = {
 //   a: 10,
 //   b: 20,
@@ -175,10 +197,32 @@
 // console.log(userFirst); // User {password: 'mango12349575', email: 'mango@mail.com'}
 // userFirst.changePassword('1qw2e3r4');
 // userFirst.changeEmail('mango@supermail.com');
-// console.log(userFirst); // User {password: '1qw2e3r4', email: 'mango@supermail.com'}
+// // console.log(userFirst); // User {password: '1qw2e3r4', email: 'mango@supermail.com'}
 
 // const userSecond = new User({
 //   password: 'pear08978675',
 //   email: 'pear@mail.com',
 // });
 // console.log(userSecond); // User {password: 'pear08978675', email: 'pear@mail.com'}
+
+// ========================Стасические свойства и методы=========================
+// продолжение примера со строки 180
+// встатических методах не нужен  this
+// функция(метод) ниже не доступна экземпляру, она доступна  только на самом конструкторе
+// User.logInfo = function (obj) {
+//   console.log('User.logInfo -> obj:', obj);
+//   console.log('User.logInfo -> this:', this);
+// };
+
+// свойство ниже не доступно экземпляру, оно доступно  только на самом конструкторе
+// User.message = 'Это статическое свойство, меня нет на экземплярах или в прототипе';
+
+// console.dir(User);
+// console.log(userFirst);
+
+// User.logInfo(userFirst);
+// User.logInfo -> obj: User {password: '1qw2e3r4', email: 'mango@supermail.com'}
+// User.logInfo -> this: ƒ ({ password, email } = {}) {
+//   this.password = password;
+//   this.email = email;
+// }
