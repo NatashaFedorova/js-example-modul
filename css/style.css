@@ -1,4 +1,5 @@
-.counter {
+/*----------для приладу Counter (index.html, counter.js)------------*/
+/* .counter {
   display: flex;
   align-items: center;
 }
@@ -10,4 +11,26 @@
 .text {
   margin: 0 25px;
   font-size: 36px;
+} */
+/*----------для приладу 4 (abstract-6-1)------------*/
+/* .message {
+  border-radius: 4px;
+  border: 2px solid rgb(131, 131, 193);
 }
+
+.link-btn {
+  border-radius: 4px;
+  padding: 10px;
+  color: rgb(49, 12, 83);
+  background-color: rgb(131, 131, 193);
+  display: inline-block;
+  text-decoration: none;
+} */
+
+/*----------для приладу 5-6 (abstract-6-1)------------*/
+/* .orange,
+.color {
+  color: orange;
+} */
+
+/*----------для приладу 7 (abstract-6-1)------------*/
