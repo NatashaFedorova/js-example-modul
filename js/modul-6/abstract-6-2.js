@@ -195,3 +195,30 @@
 // }
 
 // =========================Приклад - 13. Подія change===============================
+// const textInput = document.querySelector('.text-input');
+// const output = document.querySelector('.output');
+
+// textInput.addEventListener('input', event => {
+//   output.textContent = event.currentTarget.value;
+// });
+
+// =====================Приклад - 14. Подія focus і blur=============================
+// const textInput = document.querySelector('.text-input');
+// const setFocusBtn = document.querySelector('[data-action="set"]');
+// const removeFocusBtn = document.querySelector('[data-action="remove"]');
+
+// setFocusBtn.addEventListener('click', () => {
+//   textInput.focus();
+// });
+
+// removeFocusBtn.addEventListener('click', () => {
+//   textInput.blur();
+// });
+
+// textInput.addEventListener('focus', () => {
+//   textInput.value = 'This input has focus';
+// });
+
+// textInput.addEventListener('blur', () => {
+//   textInput.value = '';
+// });
