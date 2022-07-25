@@ -87,3 +87,144 @@
 .list-item:not(:last-child) {
   margin-bottom: 8px;
 } */
+
+/*-------------------------далі приклади для abstract-6-2--------------------------*/
+/*--------------------приклад - 2, 3, 4, 5, 6 abstract-6-2-----------------*/
+/* .section-buttons {
+  display: flex;
+}
+
+.btn {
+  display: block;
+  background-color: aqua;
+  color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  border: 0;
+}
+
+.btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: rgb(255, 0, 166);
+} */
+
+/*--------------------приклад - 7 abstract-6-2-----------------*/
+/* .section {
+  min-height: 100vh;
+  display: flex;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form input {
+  margin-bottom: 16px;
+  padding: 8px 12px;
+}
+
+.register-form button {
+  padding: 12px;
+} */
+
+/*--------------------приклад - 9 abstract-6-2-----------------*/
+/* body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.log-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.log-item {
+  position: relative;
+  padding: 8px;
+  border: 1px dashed #2a2a2a;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.log-item > .chip {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-list li:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+button {
+  display: inline-flex;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  text-transform: uppercase;
+} */
+
+/*--------------------приклад - 11 abstract-6-2-----------------*/
+/* .section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 32px;
+}
+
+.btn {
+  background-color: aqua;
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 4px;
+  border: 0;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: rgb(255, 0, 166);
+} */
+
+/*--------------------приклад - 12 abstract-6-2-----------------*/
+/* body {
+  margin: 16px;
+}
+
+select {
+  padding: 4px;
+} */
+
+/*--------------------приклад - 13 abstract-6-2-----------------*/
