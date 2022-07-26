@@ -114,11 +114,33 @@
 // console.log(XO('ooom'), false);
 
 // =============================Task-6======================================
-// Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems.
-// It is composed of four nucleic acid bases Guanine('G'), Cytosine('C'), Adenine('A'), and Thymine('T').
-// Ribonucleic acid, RNA, is the primary messenger molecule in cells.
-// RNA differs slightly from DNA its chemical structure and contains no Thymine.
-// In RNA Thymine is replaced by another nucleic acid Uracil('U').
-// Create a function which translates a given DNA string into RNA.
+// Дезоксирибонуклеиновая кислота, ДНК является основной молекулой хранения информации в биологических системах.
+// Он состоит из четырех оснований нуклеиновых кислот гуанина(«G»), цитозина(«C»), аденина(«A») и тимина(«T»).
+// Рибонуклеиновая кислота, РНК, является основной молекулой-мессенджером в клетках.
+// РНК немного отличается от ДНК своей химической структурой и не содержит тимина.
+// В РНК тимин заменен другой нуклеиновой кислотой урацилом(«U»).
 
-// const DNAtoRNA = dna => {};
+// Создайте функцию, которая переводит заданную строку ДНК в РНК.
+
+// "GCAT"  =>  "GCAU"
+
+// Входная строка может быть произвольной длины, в частности, она может быть пустой.
+// Гарантируется, что все входные данные верны,
+// т.е.каждая входная строка будет состоять только из 'G', 'C', 'A'и / или 'T'.
+
+// вариант 1
+// const DNAtoRNA = dna => dna.replaceAll('T', 'U');
+
+// вариант 2
+// const DNAtoRNA = dna =>
+//   dna
+//     .split('')
+//     .map(el => (el === 'T' ? (el = 'U') : el))
+//     .join('');
+
+// вариант 3
+const DNAtoRNA = dna => dna.split('T').join('U');
+
+console.log(DNAtoRNA('TTTT')); // 'UUUU'
+console.log(DNAtoRNA('GCAT')); // 'GCAU'
+console.log(DNAtoRNA('GACCGCCGCC')); // 'GACCGCCGCC'
