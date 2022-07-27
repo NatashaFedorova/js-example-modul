@@ -139,8 +139,8 @@
 //     .join('');
 
 // вариант 3
-const DNAtoRNA = dna => dna.split('T').join('U');
+// const DNAtoRNA = dna => dna.split('T').join('U');
 
-console.log(DNAtoRNA('TTTT')); // 'UUUU'
-console.log(DNAtoRNA('GCAT')); // 'GCAU'
-console.log(DNAtoRNA('GACCGCCGCC')); // 'GACCGCCGCC'
+// console.log(DNAtoRNA('TTTT')); // 'UUUU'
+// console.log(DNAtoRNA('GCAT')); // 'GCAU'
+// console.log(DNAtoRNA('GACCGCCGCC')); // 'GACCGCCGCC'
