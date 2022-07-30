@@ -269,3 +269,18 @@ button {
   margin-right: 2px;
   margin-left: 2px;
 } */
+
+/*--------------------приклад - 5 modul-6-repeta-1-----------------*/
+.site-nav__link {
+  text-decoration: none;
+  color: black;
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus {
+  text-decoration: underline;
+}
+
+.site-nav__link--current {
+  color: blueviolet;
+}
