@@ -271,7 +271,7 @@ button {
 } */
 
 /*--------------------приклад - 5 modul-6-repeta-1-----------------*/
-.site-nav__link {
+/* .site-nav__link {
   text-decoration: none;
   color: black;
 }
@@ -283,4 +283,38 @@ button {
 
 .site-nav__link--current {
   color: blueviolet;
+} */
+
+/*--------------------приклад - 8 modul-6-repeta-1-----------------*/
+/* .color-picker__option {
+  border-radius: 4px;
+  border: 0;
+  padding: 10px;
+}
+.color-picker__option:not(:last-child) {
+  margin-right: 15px;
+} */
+
+/*--------------------для прикладу 11 modul-6(repeta-1)-----------------*/
+/* строка 327 - modul-6-repeta-1 */
+/* .title__link {
+  color: blueviolet;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.title:hover .title__link {
+  color: rgb(223, 26, 160);
+} */
+
+/*--------------------для прикладу 12 modul-6(repeta-1)-----------------*/
+.transaction-table {
+  border-collapse: collapse;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 8px;
+  border: 1px solid #2a2a2a;
 }
