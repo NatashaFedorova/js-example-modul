@@ -332,7 +332,7 @@ import transactionHistory from '../../data/transaction.js';
 
 // ========================для прикладу 11 (repeta-1) таблиця транзакцій строк=============================
 //розкоментувари 2 строку в цьому файлі (імпорт массиву об'єктів transactionsHistory)
-console.log(transactionHistory);
+// console.log(transactionHistory);
 
 // makeTransactionTableRowMarkup(переклад) - зробити розмітку рядка таблиці транзакцій
 /*
@@ -349,23 +349,23 @@ console.log(transactionHistory);
  * </tbody>
  */
 
-const makeTransactionTableRowMarkup = transaction => {
-  const { id, amount, date, business, type, name, account } = transaction;
-  return `
-  <tr>
-    <td>${id}</td>
-    <td>${amount}</td>
-    <td>${date}</td>
-    <td>${business}</td>
-    <td>${type}</td>
-    <td>${name}</td>
-    <td>${account}</td>
-   </tr>
- `;
-};
+// const makeTransactionTableRowMarkup = transaction => {
+//   const { id, amount, date, business, type, name, account } = transaction;
+//   return `
+//   <tr>
+//     <td>${id}</td>
+//     <td>${amount}</td>
+//     <td>${date}</td>
+//     <td>${business}</td>
+//     <td>${type}</td>
+//     <td>${name}</td>
+//     <td>${account}</td>
+//    </tr>
+//  `;
+// };
 
-const makeTransactionTableRows = transactionHistory.map(makeTransactionTableRowMarkup).join('');
-console.log(makeTransactionTableRows);
+// const makeTransactionTableRows = transactionHistory.map(makeTransactionTableRowMarkup).join('');
+// console.log(makeTransactionTableRows);
 
-const tableBodyEl = document.querySelector('.table__body');
-tableBodyEl.insertAdjacentHTML('afterbegin', makeTransactionTableRows);
+// const tableBodyEl = document.querySelector('.table__body');
+// tableBodyEl.insertAdjacentHTML('afterbegin', makeTransactionTableRows);
