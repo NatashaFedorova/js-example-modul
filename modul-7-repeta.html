@@ -7,165 +7,64 @@
     <title>Document</title>
     <link rel="stylesheet" href="./prettierrs/prettierrs.json" />
     <link rel="stylesheet" href="./css/style.css" />
+
+    <style>
+      .tags {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        outline: 1px solid red;
+        padding: 20px;
+      }
+      .tags__item > button {
+        padding: 10px;
+      }
+      .tags__item:not(:last-child) {
+        margin-right: 10px;
+      }
+      .tags__button--active {
+        color: rgb(41, 9, 72);
+        background-color: rgb(127, 117, 189);
+      }
+    </style>
   </head>
   <body>
     <p><a class="link-nav" href="./index.html">Повернутися до основної сторінки</a></p>
     <!-- <button class="btn-magic" type="button">Magic</button> -->
 
-    <!-------------------- для прикладу 1-2 (repeta-1) пошук елемента------------------------------>
-    <!-- <ul class="nav__list">
-      <li class="nav__item"><a class="nav__link" href="./modul-6-2.html">Про нас</a></li>
-      <li class="nav__item"><a class="nav__link" href="./modul-6-2.html">Портфоліо</a></li>
-      <li class="nav__item"><a class="nav__link" href="./modul-6-2.html">Контакти</a></li>
-    </ul>  -->
-
-    <!-------------------- для прикладу 3-4 (repeta-1) пошук елемента------------------------------>
-    <!-- <section class="hero">
-      <h1 class="hero__title">Все про місце сили</h1>
-      <img
-        class="hero__img"
-        src="https://placeimg.com/400/200/nature"
-        alt="Місце сили"
-        width="320"
-      />
-      <br />
-      <input type="text" class="js-input" />
-      <div class="js-actions actions">
-        <button type="button" data-action="add">Створити</button>
-        <button type="button" data-action="remove">Видалити</button>
-        <button type="button" data-action="edit">Редагувати</button>
-      </div>
-    </section> -->
-
-    <!-------------------- для прикладу 5, 6, 7 (repeta-1) пошук елемента------------------------------>
-    <!-- <section class="section-41">
-      <div class="hero"></div>
-      <ul class="site-nav">
-        <li class="site-nav__item">
-          <a href="/about" class="site-nav__link">Про нас</a>
-        </li>
-        <li class="site-nav__item"><a href="/portfolio" class="site-nav__link">Портфоліо</a></li>
-        <li class="site-nav__item"><a href="/contacts" class="site-nav__link">Контакти</a></li>
-      </ul>
-    </section> -->
-    <!-------------------- для прикладу 8 (repeta-1) створення колекції елементів------------------------------>
-    <!-- <div class="color-picker js-color-picker"></div> -->
-
-    <!-------------------- для прикладу 10 (repeta-1) створення картки продукта------------------------------>
-    <!-- <div class="products js-products"></div> -->
-
-    <!-------------------- для прикладу 11 (repeta-1) парс строк------------------------------>
-    <!-- <h1 class="title">Заголовок<span class="title__smile">;)</span></h1> -->
-
-    <!-------------------- для прикладу 12 (repeta-1) таблиця транзакцій строк----------------------------->
-    <!-- <table class="transaction-table js-transaction-table">
-      <thead>
-        <tr>
-          <th>ID транзакции</th>
-          <th>Сумма</th>
-          <th>Дата</th>
-          <th>Кто</th>
-          <th>Тип транзации</th>
-          <th>Имя счёта</th>
-          <th>Номер счёта</th>
-        </tr>
-      </thead>
-
-      <tbody class="table__body"></tbody>
-    </table> -->
-
-    <!-------------------- для прикладу 1 (repeta-2!!!!!!!) таблиця транзакцій строк----------------------------->
-    <!-- <div class="buttons">
-      <button class="js-target-btn" type="button">Цільова кнопка</button>
-      <button class="js-add-listener" type="button">Додати слухача</button>
-      <button class="js-remove-listener" type="button">Зняти слухача</button>
-    </div> -->
-
-    <!-------------------- для прикладу 2 (repeta-2) подія inputs----------------------------->
-    <!-- <form class="js-register-form" autocomplete="off">
-      <div role="group">
-        <label>
-          Почта
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Пароль
-          <input name="password" type="password" />
-        </label>
-      </div>
-
-      <br />
-      <div role="group">
-        <b>Тип подписки:</b>
-        <label>
-          <input type="radio" name="subscription" value="free" />
-          Free
-        </label>
-        <label>
-          <input type="radio" name="subscription" value="basic" />
-          Basic
-        </label>
-        <label>
-          <input type="radio" name="subscription" value="pro" />
-          Pro
-        </label>
-      </div>
-
-      <br />
-      <button type="submit">Зарегистрироваться</button>
-    </form> -->
-
-    <!-------------------- для прикладу 3-4 (repeta-2) подія inputs та патерн 'об'єкт посилань'----------------------------->
-    <!-- <label>
-      Имя
-      <input type="text" class="js-input" />
-    </label>
-
-    <p>
-      <label>
-        <input type="checkbox" class="js-license" />
-        Принимаю лицензинное соглашение
-      </label>
-    </p> -->
-
-    <!-- на цій кнопці стоїть атрибут disabled - вимкнено,
-    тому вона початково не активна  -->
-    <!-- <button type="submit" disabled class="js-button">
-      Зарегистрироваться как <span>Аноним</span>
-    </button> -->
-
-    <!-------------------- для прикладу 5 (repeta-2) події клавіатури----------------------------->
-    <!-- <button class="js-clear">Очистити</button>
-    <p class="output js-output"></p> -->
-
-    <!----------------------- для прикладу 6 (repeta-2) події миші---------------------------------->
-    <!-- <div class="box js-box">
-      <div class="inner-box"></div>
-    </div> -->
-
-    <!----------------------- для прикладу 7 (repeta-2) модалка---------------------------------->
-    <!-- <button class="button" data-action="open-modal">Открыть модалку</button>
-
-    <div class="backdrop js-backdrop">
-      <div class="modal">
-        <h2>Modal window</h2>
-        <p>
-          In user interface design for computer applications, a modal window is a graphical control
-          element subordinate to an application's main window. It creates a mode that disables the
-          main window but keeps it visible, with the modal window as a child window in front of it.
-          Users must interact with the modal window before they can return to the parent
-          application. This avoids interrupting the workflow on the main window. Modal windows are
-          sometimes called heavy windows or modal dialogs because they often display a dialog box.
-        </p>
-        <button type="button" class="button" data-action="close-modal">Закрыть</button>
+    <!-------------------- для прикладу 1 (repeta-1) bubble phase------------------------------>
+    <!-- <div id="parent">
+      Parent
+      <div id="child">
+        Child
+        <div id="descendant">Descendant</div>
       </div>
     </div> -->
 
-    <!--  Modul 6 -->
-    <script src="./js/modul-6/modul-6-repeta-1.js" type="module"></script>
-    <script src="./js/modul-6/modul-6-repeta-2.js" type="module"></script>
+    <!-------------------- для прикладу 2 (repeta-1) патерн "делегування подій"------------------------->
+    <!-- <button class="js-add-btn" type="button" style="margin-bottom: 15px">Додати кнопку</button>
+    <br />
+    <div class="container js-container" style="outline: 1px solid red; padding: 10px">
+      <button class="js-btn" type="button">Кнопка 1</button>
+      <button class="js-btn" type="button">Кнопка 2</button>
+      <button class="js-btn" type="button">Кнопка 3</button>
+      <button class="js-btn" type="button">Кнопка 4</button>
+      <button class="js-btn" type="button">Кнопка 5</button>
+    </div> -->
 
-    <!-- модалка -->
-    <script src="./js/modul-6/modal.js" type="module"></script>
+    <!-------------------------- для прикладу 3-4 (repeta-1) Делегування. Майстерня: теги------------------------------>
+    <ul class="tags js-tags">
+      <li class="tags__item"><button class="tags__btn" data-value="css">#css</button></li>
+      <li class="tags__item"><button class="tags__btn" data-value="html">#html</button></li>
+      <li class="tags__item"><button class="tags__btn" data-value="js">#js</button></li>
+      <li class="tags__item"><button class="tags__btn" data-value="nodejs">#nodejs</button></li>
+      <li class="tags__item"><button class="tags__btn" data-value="react">#react</button></li>
+      <li class="tags__item"><button class="tags__btn" data-value="npm">#npm</button></li>
+      <li class="tags__item"><button class="tags__btn" data-value="webpack">#webpack</button></li>
+    </ul>
+
+    <!--  Modul 7 -->
+    <script src="./js/modul-7/modul-7-1.js" type="module"></script>
+    <script src="./js/modul-7/modul-7-2.js" type="module"></script>
   </body>
 </html>

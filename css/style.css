@@ -389,7 +389,8 @@ body.show-modal .modal {
 } */
 
 /*-------------------для прикладів 1, 2, 3 modul-7 (abstract-1)-----------------*/
-/* #parent,
+/*------------------а  також для прикладів 1 modul-7 (repeta)---------------------*/
+#parent,
 #child,
 #descendant {
   margin: 16px;
@@ -412,7 +413,7 @@ body.show-modal .modal {
 
 #descendant {
   background-color: #ff9800;
-} */
+}
 
 /*-------------------для прикладів 4 modul-7 (abstract-1)-----------------*/
 /* body {
