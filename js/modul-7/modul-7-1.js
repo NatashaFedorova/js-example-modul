@@ -99,43 +99,147 @@
 //     - декілька із багатьох;
 //     - Set.
 
-const tagsList = document.querySelector('.js-tags');
+// const tagsList = document.querySelector('.js-tags');
 
 // // для варіанта 1
 // // let selectedTag = [];
 
 // для варіанта 2
-let selectedTag = new Set();
+// let selectedTag = new Set();
 
-function onTagsContainerClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
+// function onTagsContainerClick(e) {
+//   if (e.target.nodeName !== 'BUTTON') {
+//     return;
+//   }
 
-  // // як варіант - 1, але є краще
-  // // e.target.classList.toggle('tags__button--active');
-  // // selectedTag.push(e.target.dataset.value);
+// // як варіант - 1, але є краще
+// // e.target.classList.toggle('tags__button--active');
+// // selectedTag.push(e.target.dataset.value);
 
-  // варіант 2 - кращій
-  const btn = e.target;
-  console.log('btn', btn);
+// варіант 2 - кращій
+// const btn = e.target;
+// console.log('btn', btn);
 
-  const tag = btn.dataset.value;
-  console.log('tag', tag);
+// const tag = btn.dataset.value;
+// console.log('tag', tag);
 
-  const isActive = btn.classList.contains('tags__button--active');
-  console.log('isActive', isActive);
+// const isActive = btn.classList.contains('tags__button--active');
+// console.log('isActive', isActive);
 
-  // тернарним оператором замінити не можна, буде працювати, але буде погана якість коду
-  if (isActive) {
-    selectedTag.delete(tag);
-  } else {
-    selectedTag.add(tag);
-  }
+// тернарним оператором замінити не можна, буде працювати, але буде погана якість коду
+//   if (isActive) {
+//     selectedTag.delete(tag);
+//   } else {
+//     selectedTag.add(tag);
+//   }
 
-  btn.classList.toggle('tags__button--active');
+//   btn.classList.toggle('tags__button--active');
 
-  console.log(selectedTag);
-}
+//   console.log(selectedTag);
+// }
 
-tagsList.addEventListener('click', onTagsContainerClick);
+// tagsList.addEventListener('click', onTagsContainerClick);
+
+// ==============================приклад 5 Делегування. Мастерская: колорпикер======================================
+// <div class="color-card">
+//   <div
+//     class="color-swatch"
+//     data-hex="${hex}"
+//     data-rgb="${rgb}"
+//     style="background-color: ${hex}"
+//   ></div>
+//   <div class="color-meta">
+//     <p>HEX: ${hex}</p>
+//     <p>RGB: ${rgb}</p>
+//   </div>
+// </div>
+
+// const colors = [
+//   { hex: '#f44336', rgb: '244,67,54' },
+//   { hex: '#e91e63', rgb: '233,30,99' },
+//   { hex: '#9c27b0', rgb: '156,39,176' },
+//   { hex: '#673ab7', rgb: '103,58,183' },
+//   { hex: '#3f51b5', rgb: '63,81,181' },
+//   { hex: '#2196f3', rgb: '33,150,243' },
+//   { hex: '#00bcd4', rgb: '0,188,212' },
+//   { hex: '#009688', rgb: '0,150,136' },
+//   { hex: '#4caf50', rgb: '76,175,80' },
+//   { hex: '#ffeb3b', rgb: '255,235,59' },
+//   { hex: '#ff9800', rgb: '255,152,0' },
+//   { hex: '#795548', rgb: '121,85,72' },
+//   { hex: '#607d8b', rgb: '96,125,139' },
+// ];
+
+// const paletteContainer = document.querySelector('.js-palette');
+// const cardMarkup = createColorCardsMarkup(colors);
+
+// paletteContainer.insertAdjacentHTML('beforeend', cardMarkup);
+// paletteContainer.addEventListener('click', onPaletteContainerClick);
+
+// function createColorCardsMarkup(colors) {
+//   return colors
+//     .map(({ hex, rgb }) => {
+//       return `<div class="color-card">
+//       <div
+//         class="color-swatch"
+//         data-hex="${hex}"
+//         data-rgb="${rgb}"
+//         style="background-color: ${hex}"
+//       ></div>
+//       <div class="color-meta">
+//         <p>HEX: ${hex}</p>
+//         <p>RGB: ${rgb}</p>
+//       </div>
+//     </div>`;
+//     })
+//     .join('');
+// }
+
+// нижче функція не читабельна
+// function onPaletteContainerClick(e) {
+//   const isColorSwatchEl = e.target.classList.contains('color-swatch');
+//   if (!isColorSwatchEl) {
+//     return;
+//   }
+
+//   const currentActiveCard = document.querySelector('.color-card.is-active');
+//   if (currentActiveCard) {
+//     currentActiveCard.classList.remove('is-active');
+//   }
+
+//   const swatchEl = e.target;
+//   const parentColorCardEl = swatchEl.closest('.color-card');
+//   parentColorCardEl.classList.add('is-active');
+
+//   document.body.style.backgroundColor = swatchEl.dataset.hex;
+// }
+
+// робимо функцію більш читабельною
+// function onPaletteContainerClick(e) {
+//   const isColorSwatchEl = e.target.classList.contains('color-swatch');
+//   if (!isColorSwatchEl) {
+//     return;
+//   }
+
+//   const swatchEl = e.target;
+//   const parentColorCardEl = swatchEl.closest('.color-card');
+
+//   removeActiveCardClass();
+//   addActiveCardClass(parentColorCardEl);
+//   setBodyBgColor(swatchEl.dataset.hex);
+// }
+
+// function setBodyBgColor(color) {
+//   document.body.style.backgroundColor = color;
+// }
+
+// function removeActiveCardClass() {
+//   const currentActiveCard = document.querySelector('.color-card.is-active');
+//   if (currentActiveCard) {
+//     currentActiveCard.classList.remove('is-active');
+//   }
+// }
+
+// function addActiveCardClass(card) {
+//   card.classList.add('is-active');
+// }
