@@ -7,9 +7,46 @@
     <title>Document</title>
     <link rel="stylesheet" href="./prettierrs/prettierrs.json" />
     <link rel="stylesheet" href="./css/style.css" />
+
+    <style>
+      .feedback-form {
+        width: 480px;
+      }
+
+      .feedback-form > label {
+        width: 100%;
+        margin-bottom: 16px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .feedback-form input,
+      .feedback-form textarea {
+        font: inherit;
+        padding: 8px;
+      }
+
+      .feedback-form textarea {
+        resize: none;
+      }
+    </style>
   </head>
   <body>
     <p><a class="link-nav" href="./index.html">Повернутися до основної сторінки</a></p>
+
+    <!----------------------------- Задача 1 ------------------------------>
+    <form class="feedback-form js-feedback-form">
+      <label>
+        <b>Ім'я</b>
+        <input type="text" name="name" placeholder="Введіть ваше ім'я" value="Анонімус" />
+      </label>
+      <label>
+        <b>Повідомлення</b>
+        <textarea name="message" rows="6"></textarea>
+      </label>
+      <button type="submit">Залишити відгук</button>
+    </form>
 
     <!--  Modul 8 -->
     <script src="./js/modul-8/modul-8-repeta.js" type="module"></script>
