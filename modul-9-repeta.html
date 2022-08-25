@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./prettierrs/prettierrs.json" />
     <link rel="stylesheet" href="./css/style.css" />
 
-    /* Задача 1 ( мод-9 Репета-1) */
     <style>
       .alert {
         position: fixed;
@@ -40,9 +39,40 @@
         visibility: visible;
         opacity: 1;
       }
-    </style>
+      .timer {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: #212121;
+        border-radius: 2px;
+      }
 
-    /* Задача 2 ( мод-9 Репета-1) */
+      .clockface {
+        margin-bottom: 15px;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 80px;
+        margin-top: 0;
+        margin-bottom: 24px;
+      }
+
+      .timer-btn {
+        display: inline-flex;
+        margin-left: 4px;
+        margin-right: 4px;
+        text-transform: uppercase;
+        border: 0;
+        background-color: #3f51b5;
+        color: #ffffff;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 24px;
+        border-radius: 3px;
+      }
+
+      .timer-btn.is-active {
+        background-color: #2196f3;
+      }
+    </style>
   </head>
   <body>
     <p><a class="link-nav" href="./index.html">Повернутися до основної сторінки</a></p>
@@ -50,20 +80,20 @@
     <!-- Задача 1 ( мод-9 Репета-1) -->
     <!-- <p class="alert success js-alert">Операция проведена успешно!</p> -->
 
-    <!-- Задача 2 -->
-    <div id="subscription-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <p>Подпишись на рассылку</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-            <button type="button" class="btn btn-primary" data-subscribe>Подписаться</button>
-          </div>
-        </div>
+    <!-- Задача 2 ( мод-9 Репета-1)-->
+    <!-- в файлі parcel-test -->
+
+    <!-- Задача 3 ( мод-9 Репета-1)-->
+    <!-- <div class="timer">
+      <p class="clockface js-clockface"></p>
+
+      <div class="actions">
+        <button class="timer-btn" data-action-start>Запустить</button>
+        <button class="timer-btn" data-action-stop>Остановить</button>
       </div>
-    </div>
+    </div> -->
+
+    <!-- Задача !!111 ( мод-9 Репета-2)-->
 
     <!--  Modul 9 -->
     <script src="./js/modul-9/modul-9-repeta-1.js" type="module"></script>
