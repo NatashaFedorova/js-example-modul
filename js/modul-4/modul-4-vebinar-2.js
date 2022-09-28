@@ -34,12 +34,12 @@
 // function getUniqueItems2(arr) {
 //   const result = [];
 
-//   arr.forEach((item, idx) => {
-//     console.log(item[idx]);
-//     if (arr.indexOf(item) === idx) {
-//       result.push(item);
-//     }
-//   });
+//   //   arr.forEach((item, idx) => {
+//   //     console.log(item[idx]);
+//   //     if (arr.indexOf(item) === idx) {
+//   //       result.push(item);
+//   //     }
+//   //   });
 //   return arr.filter((item, idx) => arr.indexOf(item) === idx);
 // }
 

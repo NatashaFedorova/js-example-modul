@@ -160,12 +160,60 @@
 // solution([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]);
 // returns "-10--8,-6,-3-1,3-5,7-11,14,15,17-20"
 
-function creatingAnOrderedList(arr) {
-  let x = 0;
+function solution(list) {
+  if (typeof list[0] === 'string') {
+    list = list[0].split(',').map(el => (Number(el) ? Number(el) : el));
+    console.log(list);
+  }
+  if (list === []) {
+    return;
+  }
+
+  list.sort((a, b) => a - b);
+
+  const arrFormRange = [];
+  const arrRes = [];
+  const newArr = [];
+
+  list.forEach(el => {
+    if (arrFormRange.length === 0) {
+      arrFormRange.push(el);
+    } else if (el - 1 === arrFormRange[arrFormRange.length - 1]) {
+      arrFormRange.push(el);
+    } else if (el - 1 !== arrFormRange[arrFormRange.length - 1]) {
+      if (arrFormRange.length <= 2) {
+        arrRes.push(...arrFormRange, el);
+        arrFormRange.splice(0, arrFormRange.length);
+      } else {
+        arrRes.push([...arrFormRange], el);
+        arrFormRange.splice(0, arrFormRange.length);
+      }
+    }
+  });
+
+  if (arrFormRange.length <= 2) {
+    arrRes.push(...arrFormRange);
+    arrFormRange.splice(0, arrFormRange.length);
+  } else if (arrFormRange.length >= 2) {
+    arrRes.push([...arrFormRange]);
+    arrFormRange.splice(0, arrFormRange.length);
+  }
+
+  arrRes.forEach(el => {
+    if (typeof el !== 'number') {
+      const min = Math.min(...el);
+      const max = Math.max(...el);
+      const string = `${min}-${max}`;
+      el = string;
+      newArr.push(el);
+    } else {
+      newArr.push(String(el));
+    }
+  });
+
+  console.log(newArr.join(','));
+
+  return newArr.join(',');
 }
 
-console.log(
-  creatingAnOrderedList([
-    -10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20,
-  ])
-);
+solution([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]);
